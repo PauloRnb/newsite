@@ -1,0 +1,70 @@
+"use client";
+import * as React from "react";
+import * as Dialog from "@radix-ui/react-dialog";
+import { CirclePlus } from "lucide-react";
+import { ButtonThemeToggle } from "../ButtonThemeToggle/ButtonThemeToggle";
+
+export function SubHeaderMobile() {
+  return (
+    <nav className="w-screen min-w-[375px] sticky top-0 bg-blue-700 dark:bg-zinc-800 lg:hidden h-14 flex items-center justify-between px-5">
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button className="inline-flex items-center justify-center gap-1 font-medium text-base text-white transition-opacity duration-200 opacity-100 hover:opacity-85 focus:outline-none focus-visible:opacity-85 dark:text-cyan-400">
+            <span>Áreas de Cobertura</span>
+            <CirclePlus size={16} strokeWidth={2.2} />
+          </button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="z-50 fixed left-1/2 top-1/2 grid max-w-lg -translate-x-1/2 -translate-y-1/2 gap-4 border dark:border-gray-700 bg-white shadow-lg duration-200 data-[state=open]:animate-modalIn data-[state=closed]:animate-modalOut sm:rounded-lg h-[18.6875rem] w-[20.9375rem] p-6 dark:bg-zinc-950 md:h-[21.125rem] md:w-[34.875rem] select-none">
+            <main className="flex flex-col items-start justify-between">
+              <Dialog.Title className="w-fit text-4xl text-blue-700 font-bold dark:text-white">
+                Logo
+              </Dialog.Title>
+              <div className="w-full flex flex-col gap-4">
+                <h3 className="text-gray-800 font-semibold text-lg dark:text-white">
+                  Áreas de Cobertura:
+                </h3>
+                <ul className="grid grid-cols-2 gap-y-2 list-disc  list-inside">
+                  <li className="text-sm font-medium text-gray-700 left-5 ml-2 dark:text-gray-300">
+                    Cigana
+                  </li>
+                  <li className="text-sm font-medium text-gray-700 left-5 ml-2 dark:text-gray-300">
+                    Cigana
+                  </li>
+                  <li className="text-sm font-medium text-gray-700 left-5 ml-2 dark:text-gray-300">
+                    Cigana
+                  </li>
+                  <li className="text-sm font-medium text-gray-700 left-5 ml-2 dark:text-gray-300">
+                    Cigana
+                  </li>
+                  <li className="text-sm font-medium text-gray-700 left-5 ml-2 dark:text-gray-300">
+                    Cigana
+                  </li>
+                  <li className="text-sm font-medium text-gray-700 left-5 ml-2 dark:text-gray-300">
+                    Cigana
+                  </li>
+                </ul>
+              </div>
+              <p className="text-gray-700 text-xs dark:text-gray-200 font-medium tracking-[0.01rem]">
+                <span className="text-sm text-orange-600 font-semibold">*</span>
+                Consulte viabilidade para sua região.
+              </p>
+            </main>
+            <Dialog.Close asChild>
+              <button
+                tabIndex={1}
+                type="button"
+                className="absolute right-5 top-5 text-gray-500 dark:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 hover:text-gray-700 focus:outline-none focus-visible:text-gray-700 dark:focus-visible:text-white"
+                aria-label="Fecha Modal"
+              >
+                <CirclePlus size={28} />
+              </button>
+            </Dialog.Close>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
+      <ButtonThemeToggle />
+    </nav>
+  );
+}
