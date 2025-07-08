@@ -39,6 +39,7 @@ module.exports = {
           from: { opacity: "1" },
           to: { opacity: "0" },
         },
+
         modalIn: {
           from: {
             opacity: "0",
@@ -59,14 +60,49 @@ module.exports = {
             transform: "translate(-50%, -48%) scale(0.95)",
           },
         },
+
+        enterFromRight: {
+          from: { opacity: "0", transform: "translateX(200px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        enterFromLeft: {
+          from: { opacity: "0", transform: "translateX(-200px)" },
+          to: { opacity: "1", transform: "translateX(0)" },
+        },
+        exitToRight: {
+          from: { opacity: "1", transform: "translateX(0)" },
+          to: { opacity: "0", transform: "translateX(200px)" },
+        },
+        exitToLeft: {
+          from: { opacity: "1", transform: "translateX(0)" },
+          to: { opacity: "0", transform: "translateX(-200px)" },
+        },
+        scaleIn: {
+          from: { opacity: "0", transform: "rotateX(-10deg) scale(0.9)" },
+          to: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
+        },
+        scaleOut: {
+          from: { opacity: "1", transform: "rotateX(0deg) scale(1)" },
+          to: { opacity: "0", transform: "rotateX(-10deg) scale(0.95)" },
+        },
       },
       animation: {
         slideInRight: "slideInRight 400ms ease-in-out",
         slideOutRight: "slideOutRight 400ms ease-in-out",
         fadeIn: "fadeIn 400ms ease-out",
         fadeOut: "fadeOut 400ms ease-in",
+
         modalIn: "modalIn 200ms linear",
         modalOut: "modalOut 200mss linear",
+
+        scaleIn: "scaleIn 200ms ease",
+        scaleOut: "scaleOut 200ms ease",
+        fadeIn: "fadeIn 200ms ease",
+        fadeOut: "fadeOut 200ms ease",
+        enterFromLeft: "enterFromLeft 250ms ease",
+        enterFromRight: "enterFromRight 250ms ease",
+        exitToLeft: "exitToLeft 250ms ease",
+        exitToRight: "exitToRight 250ms ease",
       },
     },
   },

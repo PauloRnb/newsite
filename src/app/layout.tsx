@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "./ThemeProvider/ThemeProvider";
 import { Figtree } from "next/font/google";
 import "./globals.css";
-import Wrapper from "@/components/Wrapper/Wrapper";
+import Header from "@/components/Header/Header";
+import SubHeader from "@/components/SubHeader/SubHeader";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -63,12 +64,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${figtree.className} antialiased`}
+        className={`${figtree.className} antialiased bg-zinc-100`}
         suppressHydrationWarning
       >
         <ThemeProvider>
           <div className="relative flex flex-col min-h-screen">
-            <Wrapper />
+            <SubHeader />
+            <Header />
             {children}
           </div>
         </ThemeProvider>
