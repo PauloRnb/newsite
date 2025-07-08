@@ -13,19 +13,22 @@ export default function HeaderDesktop() {
         <Link href="/" className="select-none">
           LOGO
         </Link>
+        {/* Menu DropDown Left */}
         <NavigationMenu.Root className="relative z-10 flex items-center justify-center">
           <NavigationMenu.List className="flex items-center gap-5 list-none">
             <NavigationMenu.Item>
-              <NavigationMenu.Trigger className="group text-base font-medium text-zinc-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 flex items-center gap-0.5 data-[state=open]:focus-visible:text-blue-700 data-[state=open]:text-blue-700 dark:data-[state=open]:text-cyan-500 dark:data-[state=open]:focus-visible:text-cyan-500">
-                Internet Fibra
-                <span className="sr-only">
-                  Ícone de seta apontada pra baixo
-                </span>
-                <ChevronDown
-                  size={20}
-                  className="relative transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
-                  aria-hidden
-                />
+              <NavigationMenu.Trigger className="group text-base font-medium text-zinc-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 data-[state=open]:focus-visible:text-blue-700 data-[state=open]:text-blue-700 dark:data-[state=open]:text-cyan-500 dark:data-[state=open]:focus-visible:text-cyan-500">
+                <div className="flex items-center gap-0.5">
+                  Internet Fibra
+                  <span className="sr-only">
+                    Ícone de seta apontada pra baixo
+                  </span>
+                  <ChevronDown
+                    aria-hidden
+                    size={20}
+                    className="relative transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
+                  />
+                </div>
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="absolute left-0 top-0 w-full data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft sm:w-auto">
                 <main className="w-[33.125rem] h-[28.125rem] flex flex-col justify-between">
@@ -34,12 +37,14 @@ export default function HeaderDesktop() {
                       <h2 className="text-balance font-semibold text-blue-700 dark:text-white">
                         ACESSE NOSSA ÁREA DO CLIENTE:
                       </h2>
+                      aria-hidden
                       <div className="flex flex-col relative">
                         <Separator
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-blue-700 rounded-full absolute z-[2] dark:bg-white"
                         />
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                         />
@@ -56,6 +61,7 @@ export default function HeaderDesktop() {
                         </h3>
                         <span className="sr-only">Ícone de download</span>
                         <Download
+                          aria-hidden
                           size={12}
                           strokeWidth={3}
                           className="text-zinc-600 dark:text-white"
@@ -74,7 +80,7 @@ export default function HeaderDesktop() {
                           <span className="sr-only">
                             Ícone google play store
                           </span>
-                          <RiGooglePlayFill size={16} />
+                          <RiGooglePlayFill aria-hidden size={16} />
                         </a>
                         <a
                           href="https://play.google.com/store/apps/details?id=br.net.tsmx.meuappprovedor&hl=pt-Br"
@@ -86,7 +92,7 @@ export default function HeaderDesktop() {
                             Download Via App Store
                           </span>
                           <span className="sr-only">Ícone app store</span>
-                          <IoLogoAppleAppstore size={16} />
+                          <IoLogoAppleAppstore aria-hidden size={16} />
                         </a>
                       </div>
                       <div className="flex items-center gap-1">
@@ -111,10 +117,12 @@ export default function HeaderDesktop() {
                       </h2>
                       <div className="flex flex-col relative">
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-white rounded-full absolute z-[2]"
                         />
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                         />
@@ -146,7 +154,7 @@ export default function HeaderDesktop() {
               <NavigationMenu.Link asChild>
                 <Link
                   prefetch={true}
-                  href="/Indicate"
+                  href="/Combos"
                   className="text-base font-medium text-zinc-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700"
                 >
                   Nossos Combos
@@ -160,9 +168,9 @@ export default function HeaderDesktop() {
                   Ícone de seta apontada pra baixo
                 </span>
                 <ChevronDown
+                  aria-hidden
                   size={20}
                   className="relative transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
-                  aria-hidden
                 />
               </NavigationMenu.Trigger>
               <NavigationMenu.Content className="absolute left-0 top-0 w-full data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft sm:w-auto">
@@ -174,10 +182,12 @@ export default function HeaderDesktop() {
                       </h2>
                       <div className="flex flex-col relative">
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-blue-700 rounded-full absolute z-[2] dark:bg-white"
                         />
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                         />
@@ -194,6 +204,7 @@ export default function HeaderDesktop() {
                         </h3>
                         <span className="sr-only">Ícone de download</span>
                         <Download
+                          aria-hidden
                           size={12}
                           strokeWidth={3}
                           className="text-zinc-600 dark:text-white"
@@ -212,7 +223,7 @@ export default function HeaderDesktop() {
                           <span className="sr-only">
                             Ícone google play store
                           </span>
-                          <RiGooglePlayFill size={16} />
+                          <RiGooglePlayFill aria-hidden size={16} />
                         </a>
                         <a
                           href="https://play.google.com/store/apps/details?id=br.net.tsmx.meuappprovedor&hl=pt-Br"
@@ -224,7 +235,7 @@ export default function HeaderDesktop() {
                             Download Via App Store
                           </span>
                           <span className="sr-only">Ícone app store</span>
-                          <IoLogoAppleAppstore size={16} />
+                          <IoLogoAppleAppstore aria-hidden size={16} />
                         </a>
                       </div>
                       <div className="flex items-center gap-1">
@@ -249,10 +260,12 @@ export default function HeaderDesktop() {
                       </h2>
                       <div className="flex flex-col relative">
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-white rounded-full absolute z-[2]"
                         />
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                         />
@@ -293,6 +306,7 @@ export default function HeaderDesktop() {
           </div>
         </NavigationMenu.Root>
       </div>
+      {/* Menu DropDown Right */}
       <NavigationMenu.Root className="relative z-10 flex items-center justify-center">
         <NavigationMenu.List className="flex items-center gap-5 list-none">
           <NavigationMenu.Item>
@@ -300,9 +314,9 @@ export default function HeaderDesktop() {
               Área do Cliente
               <span className="sr-only">Ícone de seta apontada pra baixo</span>
               <ChevronDown
+                aria-hidden
                 size={20}
                 className="relative transition-transform duration-[250] ease-in group-data-[state=open]:-rotate-180"
-                aria-hidden
               />
             </NavigationMenu.Trigger>
             <NavigationMenu.Content className="absolute left-0 top-0 w-full data-[motion=from-end]:animate-enterFromRight data-[motion=from-start]:animate-enterFromLeft data-[motion=to-end]:animate-exitToRight data-[motion=to-start]:animate-exitToLeft sm:w-auto">
@@ -314,10 +328,12 @@ export default function HeaderDesktop() {
                     </h2>
                     <div className="flex flex-col relative">
                       <Separator
+                        aria-hidden
                         orientation="horizontal"
                         className="shrink-0 w-10 h-[2px] bg-blue-700 rounded-full absolute z-[2] dark:bg-white"
                       />
                       <Separator
+                        aria-hidden
                         orientation="horizontal"
                         className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                       />
@@ -334,6 +350,7 @@ export default function HeaderDesktop() {
                       </h3>
                       <span className="sr-only">Ícone de download</span>
                       <Download
+                        aria-hidden
                         size={12}
                         strokeWidth={3}
                         className="text-zinc-600 dark:text-white"
@@ -350,7 +367,7 @@ export default function HeaderDesktop() {
                           Download Via Google Play
                         </span>
                         <span className="sr-only">Ícone google play store</span>
-                        <RiGooglePlayFill size={16} />
+                        <RiGooglePlayFill aria-hidden size={16} />
                       </a>
                       <a
                         href="https://play.google.com/store/apps/details?id=br.net.tsmx.meuappprovedor&hl=pt-Br"
@@ -362,7 +379,7 @@ export default function HeaderDesktop() {
                           Download Via App Store
                         </span>
                         <span className="sr-only">Ícone app store</span>
-                        <IoLogoAppleAppstore size={16} />
+                        <IoLogoAppleAppstore aria-hidden size={16} />
                       </a>
                     </div>
                     <div className="flex items-center gap-1">
@@ -374,7 +391,7 @@ export default function HeaderDesktop() {
                       href="https://netevolution.sgp.tsmx.com.br/accounts/central/login/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="bg-transparent text-base border-2 border-blue-700 text-blue-700 font-semibold w-[13.5rem] px-2 py-2 rounded-md flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors duration-200 dark:hover:bg-cyan-400 focus:outline-none focus-visible:bg-blue-700 focus-visible:text-white dark:focus-visible:bg-cyan-400 dark:text-cyan-400 dark:focus-visible:text-zinc-800 dark:hover:text-zinc-800 dark:border-cyan-400 h-11 dark:"
+                      className="bg-transparent text-base border-2 border-blue-700 text-blue-700 font-semibold w-[14.5rem] px-2 py-2 rounded-md flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors duration-200 dark:hover:bg-cyan-400 focus:outline-none focus-visible:bg-blue-700 focus-visible:text-white dark:focus-visible:bg-cyan-400 dark:text-cyan-400 dark:focus-visible:text-zinc-800 dark:hover:text-zinc-800 dark:border-cyan-400 h-11 dark:"
                     >
                       Central do Assinante
                     </a>
@@ -387,10 +404,12 @@ export default function HeaderDesktop() {
                     </h2>
                     <div className="flex flex-col relative">
                       <Separator
+                        aria-hidden
                         orientation="horizontal"
                         className="shrink-0 w-10 h-[2px] bg-white rounded-full absolute z-[2]"
                       />
                       <Separator
+                        aria-hidden
                         orientation="horizontal"
                         className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                       />
@@ -422,6 +441,7 @@ export default function HeaderDesktop() {
           <NavigationMenu.Item>
             <NavigationMenu.Link asChild>
               <Link
+                prefetch={true}
                 href="/Indicate"
                 className="text-base font-medium text-zinc-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700"
               >
@@ -434,14 +454,16 @@ export default function HeaderDesktop() {
             className="w-[1px] h-6 bg-gray-600 rounded-full dark:bg-white"
           />
           <Link
-            prefetch
+            prefetch={true}
             href="/Security"
             className="flex items-center justify-center gap-1 p-1.5 opacity-100 rounded-full focus:outline-none bg-blue-700 hover:bg-blue-500 w-[9.063rem] text-base py-[2px] text-blue-700 dark:bg-cyan-400 dark:text-zinc-800 dark:hover:bg-cyan-500 group transition-colors duration-200 dark:focus-visible:bg-cyan-500 focus-visible:bg-blue-500 group"
           >
             <span className="text-white text-base dark:text-zinc-900 font-medium dark:font-semibold">
               Segurança
             </span>
+            <span className="sr-only">Ícone de escudo, segurança</span>
             <ShieldCheck
+              aria-hidden
               size={20}
               className="text-blue-700 fill-white dark:fill-zinc-900 dark:text-cyan-400 group-hover:text-blue-500 dark:group-hover:text-cyan-500 group-focus-visible:text-blue-500 dark:group-focus-visible:text-cyan-500"
             />
