@@ -13,13 +13,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Separator } from "@radix-ui/react-separator";
-import { useState } from "react";
 
 export function DrawerHeader() {
-  const [open, setOpen] = useState(false);
   return (
     <nav>
-      <Dialog.Root open={open} onOpenChange={setOpen}>
+      <Dialog.Root>
         <Dialog.Trigger asChild>
           <button
             aria-label="Abrir o menu"
@@ -30,18 +28,8 @@ export function DrawerHeader() {
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Overlay
-            forceMount
-            className={`z-50 fixed inset-0 backdrop-blur-[2px] transition-opacity duration-300 ${
-              open ? "animate-fadeIn" : "animate-fadeOut"
-            }`}
-          />
-          <Dialog.Content
-            forceMount
-            className={`z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg select-none flex flex-col transition-transform duration-300 ${
-              open ? "animate-slideInRight" : "animate-slideOutRight"
-            }`}
-          >
+          <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-fadeIn data-[state=closed]:animate-fadeOut" />
+          <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-slideInRight ease-in data-[state=closed]:animate-slideOutRight select-none flex flex-col">
             <Dialog.Title asChild>
               <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                 <Dialog.Close asChild>
@@ -69,7 +57,7 @@ export function DrawerHeader() {
                   </Dialog.Trigger>
                   <Dialog.Portal>
                     <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-fadeIn data-[state=closed]:animate-fadeOut" />
-                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-slideInRight data-[state=closed]:animate-slideOutRight select-none flex flex-col">
+                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-slideInRight ease-in data-[state=closed]:animate-slideOutRight select-none flex flex-col">
                       <Dialog.Title asChild>
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Dialog.Close asChild>
@@ -121,7 +109,7 @@ export function DrawerHeader() {
                   </Dialog.Trigger>
                   <Dialog.Portal>
                     <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-fadeIn data-[state=closed]:animate-fadeOut" />
-                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-slideInRight data-[state=closed]:animate-slideOutRight select-none flex flex-col">
+                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-slideInRight ease-in data-[state=closed]:animate-slideOutRight select-none flex flex-col">
                       <Dialog.Title asChild>
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Dialog.Close asChild>
@@ -159,7 +147,7 @@ export function DrawerHeader() {
                   </Dialog.Trigger>
                   <Dialog.Portal>
                     <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-fadeIn data-[state=closed]:animate-fadeOut" />
-                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-slideInRight data-[state=closed]:animate-slideOutRight select-none flex flex-col">
+                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-slideInRight ease-in data-[state=closed]:animate-slideOutRight select-none flex flex-col">
                       <Dialog.Title asChild>
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Dialog.Close asChild>
