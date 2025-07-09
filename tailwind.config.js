@@ -87,8 +87,8 @@ module.exports = {
         },
       },
       animation: {
-        slideInRight: "slideInRight 400ms ease-in-out",
-        slideOutRight: "slideOutRight 400ms ease-in-out",
+        slideInRight: "slideInRight 400ms",
+        slideOutRight: "slideOutRight 400ms",
         fadeIn: "fadeIn 200ms ease-out",
         fadeOut: "fadeOut 200ms ease-in",
 
