@@ -24,20 +24,20 @@ module.exports = {
       },
       keyframes: {
         slideInRight: {
-          from: { transform: "translateX(100%)" },
-          to: { transform: "translateX(0%)" },
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0)" },
         },
         slideOutRight: {
-          from: { transform: "translateX(0%)" },
-          to: { transform: "translateX(100%)" },
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100%)" },
         },
         fadeIn: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
         fadeOut: {
-          from: { opacity: "1" },
-          to: { opacity: "0" },
+          "0%": { opacity: "1" },
+          "100%": { opacity: "0" },
         },
 
         modalIn: {
@@ -87,10 +87,10 @@ module.exports = {
         },
       },
       animation: {
-        slideInRight: "slideInRight 300ms ease-in-out",
-        slideOutRight: "slideOutRight 300ms ease-in-out",
-        fadeIn: "fadeIn 200ms ease-out",
-        fadeOut: "fadeOut 200ms ease-in",
+        slideInRight: "slideInRight 300ms ease-in-out forwards",
+        slideOutRight: "slideOutRight 300ms ease-out forwards",
+        fadeIn: "fadeIn 300ms ease-in-out forwards",
+        fadeOut: "fadeOut 300ms ease-in-out forwards",
 
         modalIn: "modalIn 200ms linear",
         modalOut: "modalOut 200mss linear",
