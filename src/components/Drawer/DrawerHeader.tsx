@@ -23,7 +23,12 @@ export function DrawerHeader() {
   const [isOpenFour, setIsOpenFour] = React.useState(false);
   return (
     <nav>
-      <Drawer.Root direction="right" open={isOpen} onOpenChange={setIsOpen}>
+      <Drawer.Root
+        direction="right"
+        dismissible={false}
+        open={isOpen}
+        onOpenChange={setIsOpen}
+      >
         <Drawer.Trigger asChild>
           <button
             aria-label="Abrir o menu"
@@ -38,7 +43,7 @@ export function DrawerHeader() {
             onClick={() => setIsOpen(false)}
             className="fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
           />
-          <Drawer.Content className="fixed z-50 gap-4 shadow-lg ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-700 inset-y-0 right-0 h-full border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm w-full transform overflow-y-auto bg-white p-0 transition-all dark:bg-zinc-800 md:max-w-[613px] flex flex-col">
+          <Drawer.Content className="fixed z-50 gap-4 shadow-lg ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 h-full border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm w-full transform overflow-y-auto bg-white p-0 transition-all dark:bg-zinc-800 md:max-w-[613px] flex flex-col">
             <Drawer.Title asChild>
               <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                 <Drawer.Close asChild>
@@ -58,6 +63,7 @@ export function DrawerHeader() {
                 {/* Internet Fibra */}
                 <Drawer.Root
                   direction="right"
+                  dismissible={false}
                   open={isOpenTwo}
                   onOpenChange={setIsOpenTwo}
                 >
@@ -121,6 +127,7 @@ export function DrawerHeader() {
                 {/* Streaming */}
                 <Drawer.Root
                   direction="right"
+                  dismissible={false}
                   open={isOpenThree}
                   onOpenChange={setIsOpenThree}
                 >
@@ -177,6 +184,7 @@ export function DrawerHeader() {
                 {/* Área do Cliente */}
                 <Drawer.Root
                   direction="right"
+                  dismissible={false}
                   open={isOpenFour}
                   onOpenChange={setIsOpenFour}
                 >
