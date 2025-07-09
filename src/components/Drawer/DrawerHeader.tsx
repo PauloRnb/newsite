@@ -161,7 +161,7 @@ export function DrawerHeader() {
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Drawer.Close asChild>
                             <button
-                              onClick={() => setIsOpenTwo(false)}
+                              onClick={() => setIsOpenThree(false)}
                               aria-label="Fechar o menu"
                               className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                             >
@@ -219,7 +219,7 @@ export function DrawerHeader() {
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Drawer.Close asChild>
                             <button
-                              onClick={() => setIsOpenTwo(false)}
+                              onClick={() => setIsOpenFour(false)}
                               aria-label="Fechar o menu"
                               className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                             >
@@ -237,7 +237,6 @@ export function DrawerHeader() {
                 </Drawer.Root>
               </div>
             </main>
-
             <div className="flex-1"></div>
             <div className="flex-row sticky bottom-0 flex h-20 min-h-[5rem] w-full items-center gap-6 px-5 py-5">
               <Drawer.Close asChild>

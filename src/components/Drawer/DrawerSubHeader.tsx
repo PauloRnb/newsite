@@ -50,6 +50,7 @@ export function DrawerSubHeader() {
             <main className="flex flex-col">
               <div className="flex flex-col items-start px-5 mt-9">
                 <a
+                  onClick={() => setIsOpen(false)}
                   href="https://wa.me/5585997362750?text=Olá estou precisando de um suporte, poderia me ajudar?"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,6 +66,7 @@ export function DrawerSubHeader() {
                   className="w-full h-[1px] bg-gray-400 shrink-0 my-6"
                 />
                 <a
+                  onClick={() => setIsOpen(false)}
                   href="https://netevolution.sgp.tsmx.com.br/accounts/central/login/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -80,8 +82,9 @@ export function DrawerSubHeader() {
                   className="w-full h-[1px] bg-gray-400 shrink-0 my-6"
                 />
                 <Link
+                  onClick={() => setIsOpen(false)}
                   prefetch
-                  href="/acessibility"
+                  href="/Acessibility"
                   className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
                 >
                   <div className="flex items-center gap-1">
