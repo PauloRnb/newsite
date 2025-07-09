@@ -43,7 +43,8 @@ export function DrawerHeader() {
                     aria-label="Fechar o menu"
                     className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                   >
-                    <CircleX size={28} />
+                    <span className="sr-only">Ícone de X</span>
+                    <CircleX aria-hidden size={28} />
                   </button>
                 </Dialog.Close>
               </h2>
@@ -71,7 +72,8 @@ export function DrawerHeader() {
                               aria-label="Fechar o menu"
                               className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                             >
-                              <CircleX size={28} />
+                              <span className="sr-only">Ícone de X</span>
+                              <CircleX aria-hidden size={28} />
                             </button>
                           </Dialog.Close>
                         </h2>
@@ -88,16 +90,19 @@ export function DrawerHeader() {
                   orientation="horizontal"
                   className="w-full h-[1px] bg-gray-400 shrink-0 my-6"
                 />
-                <Link
-                  prefetch
-                  href="/combos"
-                  className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
-                >
-                  <div className="flex items-center gap-1">
-                    <Combine size={16} className="md:size-5" />
-                    <span>Nossos Combos</span>
-                  </div>
-                </Link>
+                <Dialog.Close asChild>
+                  <Link
+                    prefetch={true}
+                    href="/combos"
+                    className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
+                  >
+                    <div className="flex items-center gap-1">
+                      <span className="sr-only">Ícone de combos</span>
+                      <Combine aria-hidden size={16} className="md:size-5" />
+                      <span>Nossos Combos</span>
+                    </div>
+                  </Link>
+                </Dialog.Close>
                 <Separator
                   orientation="horizontal"
                   className="w-full h-[1px] bg-gray-400 shrink-0 my-6"
@@ -105,12 +110,23 @@ export function DrawerHeader() {
                 {/* Menu Drawer Streaming */}
                 <Dialog.Root>
                   <Dialog.Trigger asChild>
-                    <button className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg">
+                    <button
+                      aria-label="Abrir menu"
+                      className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
+                    >
                       <div className="flex items-center gap-1">
-                        <Airplay size={16} className="md:size-5" />
+                        <span className="sr-only">Ícone de TV, Play</span>
+                        <Airplay aria-hidden size={16} className="md:size-5" />
                         <span>Streaming</span>
                       </div>
-                      <ChevronRight size={16} className="md:size-5" />
+                      <span className="sr-only">
+                        Ícone de seta apontada para a direita
+                      </span>
+                      <ChevronRight
+                        aria-hidden
+                        size={16}
+                        className="md:size-5"
+                      />
                     </button>
                   </Dialog.Trigger>
                   <Dialog.Portal>
@@ -123,7 +139,8 @@ export function DrawerHeader() {
                               aria-label="Fechar o menu"
                               className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                             >
-                              <CircleX size={28} />
+                              <span className="sr-only">Ícone de X</span>
+                              <CircleX aria-hidden size={28} />
                             </button>
                           </Dialog.Close>
                         </h2>
@@ -145,10 +162,22 @@ export function DrawerHeader() {
                   <Dialog.Trigger asChild>
                     <button className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg">
                       <div className="flex items-center gap-1">
-                        <CircleUser size={16} className="md:size-5" />
+                        <span className="sr-only">Ícone de pessoa</span>
+                        <CircleUser
+                          aria-hidden
+                          size={16}
+                          className="md:size-5"
+                        />
                         <span>Área do Cliente</span>
                       </div>
-                      <ChevronRight size={16} className="md:size-5" />
+                      <span className="sr-only">
+                        Ícone de seta apontada para a direita
+                      </span>
+                      <ChevronRight
+                        aria-hidden
+                        size={16}
+                        className="md:size-5"
+                      />
                     </button>
                   </Dialog.Trigger>
                   <Dialog.Portal>
@@ -161,7 +190,8 @@ export function DrawerHeader() {
                               aria-label="Fechar o menu"
                               className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                             >
-                              <CircleX size={28} />
+                              <span className="sr-only">Ícone de X</span>
+                              <CircleX aria-hidden size={28} />
                             </button>
                           </Dialog.Close>
                         </h2>
@@ -182,25 +212,32 @@ export function DrawerHeader() {
             </main>
             <div className="flex-1"></div>
             <div className="flex-row sticky bottom-0 flex h-20 min-h-[5rem] w-full items-center gap-6 px-5 py-5">
-              <button className="flex items-center justify-center gap-1 p-1.5 opacity-100 rounded-full focus:outline-none bg-blue-700 hover:bg-blue-500 w-[9.063rem] text-base py-[2px] text-blue-700 dark:bg-cyan-400 dark:text-zinc-800 dark:hover:bg-cyan-500 group transition-colors duration-200 dark:focus-visible:bg-cyan-500 focus-visible:bg-blue-500 group">
-                <span className="text-white text-base dark:text-zinc-900 font-medium md:text-lg">
-                  Segurança
-                </span>
-                <ShieldCheck
-                  size={20}
-                  className="text-blue-700 fill-white dark:fill-zinc-900 dark:text-cyan-400 group-hover:text-blue-500 dark:group-hover:text-cyan-500 group-focus-visible:text-blue-500 dark:group-focus-visible:text-cyan-500"
-                />
-              </button>
+              <Dialog.Close asChild>
+                <button className="flex items-center justify-center gap-1 p-1.5 opacity-100 rounded-full focus:outline-none bg-blue-700 hover:bg-blue-500 w-[9.063rem] text-base py-[2px] text-blue-700 dark:bg-cyan-400 dark:text-zinc-800 dark:hover:bg-cyan-500 group transition-colors duration-200 dark:focus-visible:bg-cyan-500 focus-visible:bg-blue-500 group">
+                  <span className="text-white text-base dark:text-zinc-900 font-medium md:text-lg">
+                    Segurança
+                  </span>
+                  <span className="sr-only">Ícone de escudo, segurança</span>
+                  <ShieldCheck
+                    aria-hidden
+                    size={20}
+                    className="text-blue-700 fill-white dark:fill-zinc-900 dark:text-cyan-400 group-hover:text-blue-500 dark:group-hover:text-cyan-500 group-focus-visible:text-blue-500 dark:group-focus-visible:text-cyan-500"
+                  />
+                </button>
+              </Dialog.Close>
               <Separator
                 orientation="vertical"
                 className="w-[1px] h-6 bg-gray-400 shrink-0"
               />
-              <Link
-                href="/indicate"
-                className="text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
-              >
-                Indique e Ganhe
-              </Link>
+              <Dialog.Close asChild>
+                <Link
+                  prefetch={true}
+                  href="/Indicate"
+                  className="text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
+                >
+                  Indique e Ganhe
+                </Link>
+              </Dialog.Close>
             </div>
           </Dialog.Content>
         </Dialog.Portal>
