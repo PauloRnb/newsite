@@ -87,10 +87,10 @@ module.exports = {
         },
       },
       animation: {
-        slideInRight: "slideInRight 200ms ease-in-out",
-        slideOutRight: "slideOutRight 200ms ease-in-out",
-        fadeIn: "fadeIn 100ms ease-out",
-        fadeOut: "fadeOut 100ms ease-in",
+        slideInRight: "slideInRight 400ms ease-in-out",
+        slideOutRight: "slideOutRight 400ms ease-in-out",
+        fadeIn: "fadeIn 200ms ease-out",
+        fadeOut: "fadeOut 200ms ease-in",
 
         modalIn: "modalIn 200ms linear",
         modalOut: "modalOut 200mss linear",
