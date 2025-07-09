@@ -40,12 +40,10 @@ export default function HeaderDesktop() {
 
                       <div className="flex flex-col relative">
                         <Separator
-                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-blue-700 rounded-full absolute z-[2] dark:bg-white"
                         />
                         <Separator
-                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                         />

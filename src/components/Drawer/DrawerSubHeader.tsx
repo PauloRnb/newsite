@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 import { EllipsisVertical, CircleX, Headset, FileScan } from "lucide-react";
 import { TbAccessible } from "react-icons/tb";
 import Link from "next/link";
@@ -10,8 +9,9 @@ import { Drawer } from "vaul";
 
 export function DrawerSubHeader() {
   const [isOpen, setIsOpen] = React.useState(false);
+
   return (
-    <nav>
+    <nav role="navigation" aria-label="Menu lateral">
       <Drawer.Root
         direction="right"
         dismissible={false}
@@ -27,84 +27,76 @@ export function DrawerSubHeader() {
             <EllipsisVertical size={20} />
           </button>
         </Drawer.Trigger>
+
         <Drawer.Portal>
           <Drawer.Overlay
-            onClick={() => setIsOpen(false)}
+            onPointerDown={() => setIsOpen(false)}
             className="fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
           />
-          <Drawer.Content className="fixed z-50 gap-4 shadow-lg ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 h-full border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm w-full transform overflow-y-auto bg-white p-0 transition-all dark:bg-zinc-800 md:max-w-[613px] flex flex-col">
+          <Drawer.Content className="fixed z-50 flex flex-col h-full w-full sm:max-w-sm md:max-w-[613px] inset-y-0 right-0 border-l overflow-y-auto p-0 bg-white dark:bg-zinc-800 shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right data-[state=closed]:duration-300 data-[state=open]:duration-500">
             <Drawer.Title asChild>
-              <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
-                <Drawer.Close asChild>
-                  <button
-                    onClick={() => setIsOpen(false)}
-                    aria-label="Fechar o menu"
-                    className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
-                  >
-                    <span className="sr-only">Ícone de X</span>
-                    <CircleX aria-hidden size={28} />
-                  </button>
-                </Drawer.Close>
-              </h2>
+              <div className="sticky top-0 z-[2] flex items-center justify-end h-16 px-4 bg-blue-700 dark:bg-zinc-900">
+                <button
+                  aria-label="Fechar o menu"
+                  onClick={() => setIsOpen(false)}
+                  className="text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
+                >
+                  <span className="sr-only">Ícone de X</span>
+                  <CircleX aria-hidden size={28} />
+                </button>
+              </div>
             </Drawer.Title>
-            <main className="flex flex-col">
-              <div className="flex flex-col items-start px-5 mt-9">
-                <a
-                  onClick={() => setIsOpen(false)}
-                  href="https://wa.me/5585997362750?text=Olá estou precisando de um suporte, poderia me ajudar?"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
-                >
-                  <div className="flex items-center gap-1">
-                    <Headset size={16} className="md:size-5" />
-                    <span>Suporte 24H</span>
-                  </div>
-                </a>
-                <Separator
-                  orientation="horizontal"
-                  className="w-full h-[1px] bg-gray-400 shrink-0 my-6"
-                />
-                <a
-                  onClick={() => setIsOpen(false)}
-                  href="https://netevolution.sgp.tsmx.com.br/accounts/central/login/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
-                >
-                  <div className="flex items-center gap-1">
-                    <FileScan size={16} className="md:size-5" />
-                    <span>2ª Via da Fatura</span>
-                  </div>
-                </a>
-                <Separator
-                  orientation="horizontal"
-                  className="w-full h-[1px] bg-gray-400 shrink-0 my-6"
-                />
+
+            <main className="flex flex-col px-5 mt-9">
+              {/* Suporte */}
+              <a
+                aria-label="Ir para suporte no WhatsApp"
+                href="https://wa.me/5585997362750?text=Olá estou precisando de um suporte, poderia me ajudar?"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-base md:text-lg font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none focus-visible:text-blue-700 dark:focus-visible:text-cyan-500 transition-colors duration-200"
+              >
+                <Headset aria-hidden size={16} className="md:size-5" />
+                <span>Suporte 24H</span>
+              </a>
+              <Separator className="my-6 h-[1px] w-full bg-gray-400" />
+
+              {/* Fatura */}
+              <a
+                aria-label="Ir para a segunda via da fatura"
+                href="https://netevolution.sgp.tsmx.com.br/accounts/central/login/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-base md:text-lg font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none focus-visible:text-blue-700 dark:focus-visible:text-cyan-500 transition-colors duration-200"
+              >
+                <FileScan aria-hidden size={16} className="md:size-5" />
+                <span>2ª Via da Fatura</span>
+              </a>
+              <Separator className="my-6 h-[1px] w-full bg-gray-400" />
+
+              {/* Acessibilidade */}
+              <Drawer.Close asChild>
                 <Link
-                  onClick={() => setIsOpen(false)}
                   prefetch
                   href="/Acessibility"
-                  className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
+                  className="flex items-center gap-2 text-base md:text-lg font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none focus-visible:text-blue-700 dark:focus-visible:text-cyan-500 transition-colors duration-200"
                 >
-                  <div className="flex items-center gap-1">
-                    <TbAccessible
-                      size={18}
-                      className="md:size-6"
-                      strokeWidth={1.8}
-                    />
-                    <span>Acessibilidade</span>
-                  </div>
+                  <TbAccessible
+                    size={18}
+                    className="md:size-6"
+                    strokeWidth={1.8}
+                  />
+                  <span>Acessibilidade</span>
                 </Link>
-                <Separator
-                  orientation="horizontal"
-                  className="w-full h-[1px] bg-gray-400 shrink-0 my-6"
-                />
-              </div>
+              </Drawer.Close>
+              <Separator className="my-6 h-[1px] w-full bg-gray-400" />
             </main>
-            <div className="flex-1"></div>
-            <div className="flex-row sticky bottom-0 flex h-20 min-h-[5rem] w-full items-center gap-6 px-5 py-5">
-              <ButtonThemeToggle className="flex items-center justify-center p-1.5 gap-1 font-semibold rounded-full focus:outline-none bg-blue-700 w-[9.063rem] text-base py-[2px] text-white dark:bg-cyan-400 dark:text-zinc-800 transition-colors duration-200 hover:bg-blue-500 dark:hover:bg-cyan-500 dark:focus-visible:bg-cyan-500 focus-visible:bg-blue-500 group md:text-lg" />
+
+            <div className="flex-1" />
+
+            {/* Rodapé com botão de tema */}
+            <div className="sticky bottom-0 flex h-20 items-center px-5 py-5">
+              <ButtonThemeToggle className="flex items-center justify-center gap-1 p-1.5 w-[9.063rem] text-base md:text-lg font-semibold rounded-full bg-blue-700 text-white dark:bg-cyan-400 dark:text-zinc-800 hover:bg-blue-500 dark:hover:bg-cyan-500 focus:outline-none focus-visible:bg-blue-500 dark:focus-visible:bg-cyan-500 transition-colors duration-200 group" />
             </div>
           </Drawer.Content>
         </Drawer.Portal>
