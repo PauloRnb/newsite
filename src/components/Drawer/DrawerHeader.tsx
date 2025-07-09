@@ -28,8 +28,8 @@ export function DrawerHeader() {
           </button>
         </Dialog.Trigger>
         <Dialog.Portal>
-          <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:duration-200" />
-          <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-in data-[state=open]:slide-in-from-right data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=closed]:duration-200 select-none flex flex-col">
+          <Dialog.Overlay className="fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+          <Dialog.Content className="fixed z-50 gap-4 shadow-lg ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 h-full border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm w-full transform overflow-y-auto bg-white p-0 transition-all dark:bg-zinc-800 md:max-w-[613px] flex flex-col">
             <Dialog.Title asChild>
               <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                 <Dialog.Close asChild>
@@ -56,8 +56,8 @@ export function DrawerHeader() {
                     </button>
                   </Dialog.Trigger>
                   <Dialog.Portal>
-                    <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:duration-200" />
-                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-in data-[state=open]:slide-in-from-right data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=closed]:duration-200 select-none flex flex-col">
+                    <Dialog.Overlay className="bg-background/80 fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+                    <Dialog.Content className="fixed z-50 gap-4 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm flex h-svh w-full flex-col overflow-y-auto bg-white p-0 dark:bg-zinc-800 md:max-w-[613px]">
                       <Dialog.Title asChild>
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Dialog.Close asChild>
@@ -108,8 +108,8 @@ export function DrawerHeader() {
                     </button>
                   </Dialog.Trigger>
                   <Dialog.Portal>
-                    <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:duration-200" />
-                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-in data-[state=open]:slide-in-from-right data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=closed]:duration-200 select-none flex flex-col">
+                    <Dialog.Overlay className="fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+                    <Dialog.Content className="fixed z-50 gap-4 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm flex h-svh w-full flex-col overflow-y-auto bg-white p-0 dark:bg-gray-700 md:max-w-[613px]">
                       <Dialog.Title asChild>
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Dialog.Close asChild>
@@ -146,8 +146,8 @@ export function DrawerHeader() {
                     </button>
                   </Dialog.Trigger>
                   <Dialog.Portal>
-                    <Dialog.Overlay className="z-50 fixed inset-0 backdrop-blur-[2px] data-[state=open]:animate-in data-[state=open]:fade-in data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=closed]:duration-200" />
-                    <Dialog.Content className="z-50 fixed top-0 right-0 h-full inset-y-0 border-l sm:max-w-sm md:max-w-[615px] w-full overflow-y-auto dark:bg-zinc-800 bg-white shadow-lg data-[state=open]:animate-in data-[state=open]:slide-in-from-right data-[state=open]:duration-300 data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=closed]:duration-200 select-none flex flex-col">
+                    <Dialog.Overlay className="fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+                    <Dialog.Content className="fixed z-50 gap-4 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm h-svh w-full flex-col overflow-y-auto bg-white p-0 dark:bg-zinc-800 md:max-w-[613px]">
                       <Dialog.Title asChild>
                         <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
                           <Dialog.Close asChild>
