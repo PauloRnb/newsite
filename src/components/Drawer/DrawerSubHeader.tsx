@@ -1,17 +1,24 @@
 "use client";
+import React from "react";
 
-import * as Dialog from "@radix-ui/react-dialog";
 import { EllipsisVertical, CircleX, Headset, FileScan } from "lucide-react";
 import { TbAccessible } from "react-icons/tb";
 import Link from "next/link";
 import { Separator } from "@radix-ui/react-separator";
 import { ButtonThemeToggle } from "../ButtonThemeToggle/ButtonThemeToggle";
+import { Drawer } from "vaul";
 
 export function DrawerSubHeader() {
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <nav>
-      <Dialog.Root>
-        <Dialog.Trigger asChild>
+      <Drawer.Root
+        direction="right"
+        dismissible={false}
+        open={isOpen}
+        onOpenChange={setIsOpen}
+      >
+        <Drawer.Trigger asChild>
           <button
             aria-label="Abrir o menu"
             type="button"
@@ -19,22 +26,27 @@ export function DrawerSubHeader() {
           >
             <EllipsisVertical size={20} />
           </button>
-        </Dialog.Trigger>
-        <Dialog.Portal>
-          <Dialog.Overlay className="bg-background/80 fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
-          <Dialog.Content className="fixed z-50 gap-4 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm flex h-svh w-full flex-col overflow-y-auto bg-white p-0 dark:bg-zinc-800 md:max-w-[613px]">
-            <Dialog.Title asChild>
+        </Drawer.Trigger>
+        <Drawer.Portal>
+          <Drawer.Overlay
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+          />
+          <Drawer.Content className="fixed z-50 gap-4 shadow-lg ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 h-full border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm w-full transform overflow-y-auto bg-white p-0 transition-all dark:bg-zinc-800 md:max-w-[613px] flex flex-col">
+            <Drawer.Title asChild>
               <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
-                <Dialog.Close asChild>
+                <Drawer.Close asChild>
                   <button
+                    onClick={() => setIsOpen(false)}
                     aria-label="Fechar o menu"
                     className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                   >
-                    <CircleX size={28} />
+                    <span className="sr-only">Ícone de X</span>
+                    <CircleX aria-hidden size={28} />
                   </button>
-                </Dialog.Close>
+                </Drawer.Close>
               </h2>
-            </Dialog.Title>
+            </Drawer.Title>
             <main className="flex flex-col">
               <div className="flex flex-col items-start px-5 mt-9">
                 <a
@@ -91,9 +103,9 @@ export function DrawerSubHeader() {
             <div className="flex-row sticky bottom-0 flex h-20 min-h-[5rem] w-full items-center gap-6 px-5 py-5">
               <ButtonThemeToggle className="flex items-center justify-center p-1.5 gap-1 font-semibold rounded-full focus:outline-none bg-blue-700 w-[9.063rem] text-base py-[2px] text-white dark:bg-cyan-400 dark:text-zinc-800 transition-colors duration-200 hover:bg-blue-500 dark:hover:bg-cyan-500 dark:focus-visible:bg-cyan-500 focus-visible:bg-blue-500 group md:text-lg" />
             </div>
-          </Dialog.Content>
-        </Dialog.Portal>
-      </Dialog.Root>
+          </Drawer.Content>
+        </Drawer.Portal>
+      </Drawer.Root>
     </nav>
   );
 }

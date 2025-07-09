@@ -37,9 +37,10 @@ export default function HeaderDesktop() {
                       <h2 className="text-balance font-semibold text-blue-700 dark:text-white">
                         ACESSE NOSSA ÁREA DO CLIENTE:
                       </h2>
-                      aria-hidden
+
                       <div className="flex flex-col relative">
                         <Separator
+                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-blue-700 rounded-full absolute z-[2] dark:bg-white"
                         />
