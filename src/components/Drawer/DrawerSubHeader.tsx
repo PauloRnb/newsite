@@ -54,7 +54,7 @@ export function DrawerSubHeader() {
                 href="https://wa.me/5585997362750?text=Olá estou precisando de um suporte, poderia me ajudar?"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-base md:text-lg font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none focus-visible:text-blue-700 dark:focus-visible:text-cyan-500 transition-colors duration-200"
+                className="w-full flex items-center justify-start gap-1 text-base font-medium text-gray-600 dark:text-cyan-400 focus:outline-none dark:focus-visible:text-cyan-500 select-none focus-visible:text-blue-700 md:text-lg"
               >
                 <Headset aria-hidden size={16} className="md:size-5" />
                 <span>Suporte 24H</span>
@@ -67,7 +67,7 @@ export function DrawerSubHeader() {
                 href="https://netevolution.sgp.tsmx.com.br/accounts/central/login/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-base md:text-lg font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none focus-visible:text-blue-700 dark:focus-visible:text-cyan-500 transition-colors duration-200"
+                className="w-full flex items-center justify-start gap-1 text-base font-medium text-gray-600 dark:text-cyan-400 focus:outline-none dark:focus-visible:text-cyan-500 select-none focus-visible:text-blue-700 md:text-lg"
               >
                 <FileScan aria-hidden size={16} className="md:size-5" />
                 <span>2ª Via da Fatura</span>
@@ -79,7 +79,7 @@ export function DrawerSubHeader() {
                 <Link
                   prefetch
                   href="/Acessibility"
-                  className="flex items-center gap-2 text-base md:text-lg font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none focus-visible:text-blue-700 dark:focus-visible:text-cyan-500 transition-colors duration-200"
+                  className="w-full flex items-center justify-start gap-1 text-base font-medium text-gray-600 dark:text-cyan-400 focus:outline-none dark:focus-visible:text-cyan-500 select-none focus-visible:text-blue-700 md:text-lg"
                 >
                   <TbAccessible
                     size={18}
