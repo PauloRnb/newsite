@@ -7,6 +7,7 @@ interface SubmenuDrawerProps {
   icon: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
+  children: React.ReactNode; // ✅ Adicione isso
 }
 
 export function DrawerSubMenu({
@@ -14,6 +15,7 @@ export function DrawerSubMenu({
   icon,
   isOpen,
   onClose,
+  children, // ✅ Pegue o children
 }: SubmenuDrawerProps) {
   return (
     <Drawer.Root
@@ -43,7 +45,8 @@ export function DrawerSubMenu({
             </h2>
           </Drawer.Title>
 
-          {/* Conteúdo do submenu aqui */}
+          {/* Renderize o conteúdo do submenu aqui */}
+          <div className="p-4">{children}</div>
         </Drawer.Content>
       </Drawer.Portal>
     </Drawer.Root>

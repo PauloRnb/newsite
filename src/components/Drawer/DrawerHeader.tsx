@@ -15,44 +15,6 @@ import { Separator } from "@radix-ui/react-separator";
 import { Drawer } from "vaul";
 import { DrawerSubMenu } from "./DrawerSubMenu";
 
-// Componente auxiliar renomeado para evitar conflito
-const DrawerSubHeader = ({
-  isOpen,
-  onClose,
-  title,
-  icon,
-}: {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string;
-  icon: React.ReactNode;
-}) => (
-  <Drawer.Root
-    open={isOpen}
-    onOpenChange={onClose}
-    direction="right"
-    dismissible={false}
-  >
-    <Drawer.Portal>
-      <Drawer.Overlay
-        onPointerDown={onClose}
-        className="fixed inset-0 z-50 backdrop-blur-sm data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
-      />
-      <Drawer.Content
-        style={{ willChange: "transform, opacity" }}
-        className="fixed z-50 flex flex-col h-full w-full sm:max-w-sm md:max-w-[613px] inset-y-0 right-0 border-l overflow-y-auto p-0 bg-white dark:bg-zinc-800 shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right data-[state=closed]:duration-300 data-[state=open]:duration-500 dark:border-l-zinc-500"
-      >
-        <Drawer.Title asChild>
-          <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full flex items-center gap-2 px-4 bg-blue-700 dark:bg-zinc-900">
-            {icon}
-            {title}
-          </h2>
-        </Drawer.Title>
-      </Drawer.Content>
-    </Drawer.Portal>
-  </Drawer.Root>
-);
-
 // Componente principal
 export function DrawerHeader() {
   const [isOpen, setIsOpen] = useState(false);
@@ -208,7 +170,43 @@ export function DrawerHeader() {
             icon={
               submenuItems.find((item) => item.key === submenu)?.icon || null
             }
-          />
+          >
+            {submenu === "fibra" && (
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">
+                  Planos de Internet
+                </h3>
+                <ul className="list-disc list-inside text-sm">
+                  <li>300Mb com Paramount+ e HBO Max</li>
+                  <li>400Mb com Premiere e canais ao vivo</li>
+                  <li>600Mb com todos os apps inclusos</li>
+                </ul>
+              </div>
+            )}
+
+            {submenu === "streaming" && (
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">
+                  Apps de Streaming
+                </h3>
+                <ul className="list-disc list-inside text-sm">
+                  <li>HBO Max</li>
+                  <li>Paramount+</li>
+                  <li>SporTV, Premiere, TNT Sports</li>
+                </ul>
+              </div>
+            )}
+
+            {submenu === "cliente" && (
+              <div className="p-4">
+                <h3 className="text-xl font-semibold mb-2">Área do Cliente</h3>
+                <p className="text-sm">
+                  Segunda via de boletos, teste de velocidade, abertura de
+                  chamado e muito mais.
+                </p>
+              </div>
+            )}
+          </DrawerSubMenu>
         </Suspense>
       )}
     </Drawer.Root>
