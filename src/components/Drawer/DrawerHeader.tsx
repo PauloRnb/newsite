@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import {
-  Menu,
   CircleX,
   ChevronLeft,
   ChevronRight,
@@ -48,7 +47,11 @@ export function DrawerHeader() {
             type="button"
             className="text-gray-600 hover:text-gray-500 focus:outline-none focus-visible:text-gray-500 dark:text-cyan-400 dark:hover:text-cyan-500 dark:focus-visible:text-cyan-500 transition-colors duration-200"
           >
-            <Menu size={28} />
+            <div className="flex flex-col gap-1">
+              <div className="w-5 h-[2px] bg-gray-600 rounded-full"></div>
+              <div className="w-5 h-[2px] bg-gray-600 rounded-full"></div>
+              <div className="w-5 h-[2px] bg-gray-600 rounded-full"></div>
+            </div>
           </button>
         </Drawer.Trigger>
         <Drawer.Portal>
