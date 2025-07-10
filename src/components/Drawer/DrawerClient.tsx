@@ -1,13 +1,19 @@
 "use client";
 import React from "react";
-import { EllipsisVertical, CircleX, Headset, FileScan } from "lucide-react";
+import {
+  CircleUser,
+  ChevronRight,
+  CircleX,
+  Headset,
+  FileScan,
+} from "lucide-react";
 import { TbAccessible } from "react-icons/tb";
 import Link from "next/link";
 import { Separator } from "@radix-ui/react-separator";
 import { ButtonThemeToggle } from "../ButtonThemeToggle/ButtonThemeToggle";
 import { Drawer } from "vaul";
 
-export function DrawerSubHeader() {
+export function DrawerClient() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
@@ -19,12 +25,12 @@ export function DrawerSubHeader() {
         onOpenChange={setIsOpen}
       >
         <Drawer.Trigger asChild>
-          <button
-            aria-label="Abrir o menu"
-            type="button"
-            className="flex items-center justify-center focus:outline-none focus-visible:text-zinc-100 dark:focus-visible:text-cyan-500 text-white hover:text-zinc-100 dark:text-cyan-400 dark:hover:text-cyan-500 transition-colors duration-200"
-          >
-            <EllipsisVertical size={20} />
+          <button className="w-full flex items-center justify-between gap-1 text-base font-medium text-gray-600 dark:text-cyan-400 focus:outline-none dark:focus-visible:text-cyan-500 select-none focus-visible:text-blue-700 md:text-lg">
+            <div className="flex items-center gap-1">
+              <CircleUser size={16} className="md:size-5" />
+              <span>Área do Cliente</span>
+            </div>
+            <ChevronRight size={16} className="md:size-5" />
           </button>
         </Drawer.Trigger>
 
