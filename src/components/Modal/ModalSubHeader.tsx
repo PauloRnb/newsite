@@ -8,7 +8,10 @@ export default function ModalSubHeader() {
     <>
       <Dialog.Root>
         <Dialog.Trigger asChild>
-          <button className="inline-flex items-center justify-center gap-1 font-medium text-base text-white transition-opacity duration-200 opacity-100 hover:opacity-85 focus:outline-none focus-visible:opacity-85 dark:text-cyan-400 select-none">
+          <button
+            aria-label="Abri modal"
+            className="flex items-center justify-center gap-1 font-medium text-base text-white transition-opacity duration-200 opacity-100 hover:opacity-85 focus:outline-none focus-visible:opacity-85 dark:text-cyan-400 select-none"
+          >
             <span>Áreas de Cobertura</span>
             <CirclePlus size={16} strokeWidth={2.2} />
           </button>
@@ -52,11 +55,12 @@ export default function ModalSubHeader() {
             </main>
             <Dialog.Close asChild>
               <button
+                aria-label="Fecha Modal"
                 tabIndex={1}
                 type="button"
                 className="absolute right-5 top-5 text-gray-500 dark:text-zinc-400 dark:hover:text-white transition-colors duration-200 hover:text-zinc-700 focus:outline-none focus-visible:text-zinc-700 dark:focus-visible:text-white"
-                aria-label="Fecha Modal"
               >
+                <span className="sr-only">Ícone de X</span>
                 <CircleX size={28} />
               </button>
             </Dialog.Close>

@@ -22,7 +22,7 @@ export function DrawerSubHeader() {
           <button
             aria-label="Abrir o menu"
             type="button"
-            className="w-7 h-7 flex items-center justify-center focus:outline-none focus-visible:text-zinc-100 dark:focus-visible:text-cyan-500 text-white hover:text-zinc-100 dark:text-cyan-400 dark:hover:text-cyan-500 transition-colors duration-200"
+            className="flex items-center justify-center focus:outline-none focus-visible:text-zinc-100 dark:focus-visible:text-cyan-500 text-white hover:text-zinc-100 dark:text-cyan-400 dark:hover:text-cyan-500 transition-colors duration-200"
           >
             <EllipsisVertical size={20} />
           </button>
