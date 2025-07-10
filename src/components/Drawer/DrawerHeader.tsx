@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import {
   Menu,
   CircleX,
+  ChevronLeft,
   ChevronRight,
   Combine,
   Globe,
@@ -34,7 +35,7 @@ export function DrawerHeader() {
   }, [isOpen]);
 
   return (
-    <nav>
+    <>
       <Drawer.Root
         direction="right"
         dismissible={false}
@@ -45,9 +46,9 @@ export function DrawerHeader() {
           <button
             aria-label="Abrir o menu"
             type="button"
-            className="w-7 h-7 flex items-center justify-center text-gray-600 hover:text-gray-500 focus:outline-none focus-visible:text-gray-500 dark:text-cyan-400 dark:hover:text-cyan-500 dark:focus-visible:text-cyan-500 transition-colors duration-200"
+            className="text-gray-600 hover:text-gray-500 focus:outline-none focus-visible:text-gray-500 dark:text-cyan-400 dark:hover:text-cyan-500 dark:focus-visible:text-cyan-500 transition-colors duration-200"
           >
-            <Menu size={20} />
+            <Menu size={28} />
           </button>
         </Drawer.Trigger>
         <Drawer.Portal>
@@ -57,7 +58,7 @@ export function DrawerHeader() {
           />
           <Drawer.Content
             style={{ willChange: "transform, opacity" }}
-            className="fixed z-50 gap-4 shadow-lg ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 h-full border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm w-full transform overflow-y-auto bg-white p-0 transition-transform dark:bg-zinc-800 md:max-w-[613px] flex flex-col"
+            className="fixed z-50 flex flex-col h-full w-full sm:max-w-sm md:max-w-[613px] inset-y-0 right-0 border-l overflow-y-auto p-0 bg-white dark:bg-zinc-800 shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right data-[state=closed]:duration-300 data-[state=open]:duration-500 dark:border-l-zinc-500"
           >
             <Drawer.Title asChild>
               <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
@@ -106,7 +107,7 @@ export function DrawerHeader() {
                       onOpenChange={submenu.setOpen}
                     >
                       <Drawer.Trigger asChild>
-                        <button className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg">
+                        <button className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 focus:outline-none dark:focus-visible:text-cyan-500  select-none focus-visible:text-blue-700 md:text-lg">
                           <div className="flex items-center gap-1">
                             {submenu.icon}
                             <span>{submenu.label}</span>
@@ -121,7 +122,7 @@ export function DrawerHeader() {
                         />
                         <Drawer.Content
                           style={{ willChange: "transform, opacity" }}
-                          className="fixed z-50 gap-4 shadow-lg ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 h-full border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm w-full transform overflow-y-auto bg-white p-0 transition-transform dark:bg-zinc-800 md:max-w-[615px] flex flex-col"
+                          className="fixed z-50 flex flex-col h-full w-full sm:max-w-sm md:max-w-[613px] inset-y-0 right-0 border-l overflow-y-auto p-0 bg-white dark:bg-zinc-800 shadow-lg transition-all data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right data-[state=closed]:duration-300 data-[state=open]:duration-500 dark:border-l-zinc-500"
                         >
                           <Drawer.Title asChild>
                             <h2 className="text-lg font-semibold sticky top-0 z-[2] h-16 w-full bg-blue-700 dark:bg-zinc-900 md:flex md:items-center">
@@ -130,8 +131,10 @@ export function DrawerHeader() {
                                 aria-label="Fechar o menu"
                                 className="absolute top-4 right-4 text-gray-300 hover:text-white transition-colors duration-200 focus:outline-none focus-visible:text-white"
                               >
-                                <span className="sr-only">Ícone de X</span>
-                                <CircleX aria-hidden size={28} />
+                                <span className="sr-only">
+                                  Ícone de seta apontada pra esquerda
+                                </span>
+                                <ChevronLeft aria-hidden size={28} />
                               </button>
                             </h2>
                           </Drawer.Title>
@@ -147,7 +150,7 @@ export function DrawerHeader() {
                 {/* Combos */}
                 <Link
                   onClick={handleClose}
-                  prefetch={true}
+                  prefetch
                   href="/combos"
                   className="w-full flex items-center justify-between text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
                 >
@@ -181,14 +184,13 @@ export function DrawerHeader() {
               </Link>
 
               <Separator
-                aria-hidden
                 orientation="vertical"
                 className="w-[1px] h-6 bg-gray-400 shrink-0"
               />
               {/* Indique */}
               <Link
                 onClick={handleClose}
-                prefetch={true}
+                prefetch
                 href="/Indicate"
                 className="text-base font-medium text-gray-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700 md:text-lg"
               >
@@ -198,6 +200,6 @@ export function DrawerHeader() {
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
-    </nav>
+    </>
   );
 }

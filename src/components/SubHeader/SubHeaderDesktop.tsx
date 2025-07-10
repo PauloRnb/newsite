@@ -32,14 +32,16 @@ export default function SubHeaderDesktop() {
         </li>
         <li>
           <Link
-            prefetch={true}
-            href="/acessibility"
+            prefetch
+            href="/Acessibility"
             className="text-white font-medium text-base hover:text-zinc-200 transition-colors duration-200 focus:outline-none focus-visible:text-zinc-200"
           >
             Acessibilidade
           </Link>
         </li>
-        <Separator orientation="vertical" className="w-[1px] h-6 bg-white" />
+        <li aria-hidden>
+          <Separator orientation="vertical" className="w-[1px] h-6 bg-white" />
+        </li>
         <li>
           <ButtonThemeToggle className="flex items-center justify-center p-1.5 gap-1 font-semibold rounded-full focus:outline-none bg-white w-[9.063rem] text-base py-[2px] text-blue-700 dark:bg-cyan-400 dark:text-zinc-800 group transition-colors duration-200 hover:bg-zinc-100 dark:hover:bg-cyan-500 dark:focus-visible:bg-cyan-500 focus-visible:bg-zinc-200 group" />
         </li>

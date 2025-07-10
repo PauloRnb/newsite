@@ -436,7 +436,7 @@ export default function HeaderDesktop() {
           <NavigationMenu.Item>
             <NavigationMenu.Link asChild>
               <Link
-                prefetch={true}
+                prefetch
                 href="/Indicate"
                 className="text-base font-medium text-zinc-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700"
               >
@@ -444,25 +444,29 @@ export default function HeaderDesktop() {
               </Link>
             </NavigationMenu.Link>
           </NavigationMenu.Item>
-          <Separator
-            orientation="vertical"
-            className="w-[1px] h-6 bg-gray-600 rounded-full dark:bg-white"
-          />
-          <Link
-            prefetch={true}
-            href="/Security"
-            className="flex items-center justify-center gap-1 p-1.5 opacity-100 rounded-full focus:outline-none bg-blue-700 hover:bg-blue-500 w-[9.063rem] text-base py-[2px] text-blue-700 dark:bg-cyan-400 dark:text-zinc-800 dark:hover:bg-cyan-500 group transition-colors duration-200 dark:focus-visible:bg-cyan-500 focus-visible:bg-blue-500 group"
-          >
-            <span className="text-white text-base dark:text-zinc-900 font-medium dark:font-semibold">
-              Segurança
-            </span>
-            <span className="sr-only">Ícone de escudo, segurança</span>
-            <ShieldCheck
-              aria-hidden
-              size={20}
-              className="text-blue-700 fill-white dark:fill-zinc-900 dark:text-cyan-400 group-hover:text-blue-500 dark:group-hover:text-cyan-500 group-focus-visible:text-blue-500 dark:group-focus-visible:text-cyan-500"
+          <NavigationMenu.Item aria-hidden>
+            <Separator
+              orientation="vertical"
+              className="w-[1px] h-6 bg-gray-600 rounded-full dark:bg-white"
             />
-          </Link>
+          </NavigationMenu.Item>
+          <NavigationMenu.Item>
+            <Link
+              prefetch
+              href="/Security"
+              className="flex items-center justify-center gap-1 p-1.5 opacity-100 rounded-full focus:outline-none bg-blue-700 hover:bg-blue-500 w-[9.063rem] text-base py-[2px] text-blue-700 dark:bg-cyan-400 dark:text-zinc-800 dark:hover:bg-cyan-500 group transition-colors duration-200 dark:focus-visible:bg-cyan-500 focus-visible:bg-blue-500 group"
+            >
+              <span className="text-white text-base dark:text-zinc-900 font-medium dark:font-semibold">
+                Segurança
+              </span>
+              <span className="sr-only">Ícone de escudo</span>
+              <ShieldCheck
+                aria-hidden
+                size={20}
+                className="text-blue-700 fill-white dark:fill-zinc-900 dark:text-cyan-400 group-hover:text-blue-500 dark:group-hover:text-cyan-500 group-focus-visible:text-blue-500 dark:group-focus-visible:text-cyan-500"
+              />
+            </Link>
+          </NavigationMenu.Item>
           <NavigationMenu.Indicator className="top-[90%] z-[0] flex h-4 items-end justify-center overflow-hidden data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in">
             <div className="relative top-full h-[24px] w-[24px] rotate-45 rounded-tl-sm bg-white shadow-md dark:bg-zinc-800" />
           </NavigationMenu.Indicator>
