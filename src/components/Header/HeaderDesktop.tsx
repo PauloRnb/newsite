@@ -116,12 +116,10 @@ export default function HeaderDesktop() {
                       </h2>
                       <div className="flex flex-col relative">
                         <Separator
-                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-white rounded-full absolute z-[2]"
                         />
                         <Separator
-                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                         />
@@ -152,7 +150,7 @@ export default function HeaderDesktop() {
             <NavigationMenu.Item>
               <NavigationMenu.Link asChild>
                 <Link
-                  prefetch={true}
+                  prefetch
                   href="/Combos"
                   className="text-base font-medium text-zinc-600 dark:text-cyan-400 hover:text-blue-700 dark:hover:text-cyan-500 focus:outline-none dark:focus-visible:text-cyan-500 transition-colors duration-200 select-none focus-visible:text-blue-700"
                 >
@@ -181,12 +179,10 @@ export default function HeaderDesktop() {
                       </h2>
                       <div className="flex flex-col relative">
                         <Separator
-                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-blue-700 rounded-full absolute z-[2] dark:bg-white"
                         />
                         <Separator
-                          aria-hidden
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
                         />
@@ -225,13 +221,13 @@ export default function HeaderDesktop() {
                           <RiGooglePlayFill aria-hidden size={16} />
                         </a>
                         <a
-                          href="https://play.google.com/store/apps/details?id=br.net.tsmx.meuappprovedor&hl=pt-Br"
+                          href="https://apps.apple.com/br/app/meuappprovedor/id1637448837"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="bg-blue-700 text-white font-semibold w-[14.5rem] px-2 py-2 rounded-md flex items-center justify-center gap-1 hover:bg-blue-500 transition-colors duration-200 dark:bg-cyan-400 dark:hover:bg-cyan-500 focus:outline-none focus-visible:bg-blue-500 dark:focus-visible:bg-cyan-500 dark:text-zinc-800 h-11"
                         >
                           <span className="text-base">
-                            Download Via App Store
+                            Download Via Apple Store
                           </span>
                           <span className="sr-only">Ícone app store</span>
                           <IoLogoAppleAppstore aria-hidden size={16} />
@@ -246,7 +242,7 @@ export default function HeaderDesktop() {
                         href="https://netevolution.sgp.tsmx.com.br/accounts/central/login/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-transparent text-base border-2 border-blue-700 text-blue-700 font-semibold w-[13.5rem] px-2 py-2 rounded-md flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors duration-200 dark:hover:bg-cyan-400 focus:outline-none focus-visible:bg-blue-700 focus-visible:text-white dark:focus-visible:bg-cyan-400 dark:text-cyan-400 dark:focus-visible:text-zinc-800 dark:hover:text-zinc-800 dark:border-cyan-400 h-11 dark:"
+                        className="bg-transparent text-base border-2 border-blue-700 text-blue-700 font-semibold w-[13.5rem] px-2 py-2 rounded-md flex items-center justify-center hover:bg-blue-700 hover:text-white transition-colors duration-200 dark:hover:bg-cyan-400 focus:outline-none focus-visible:bg-blue-700 focus-visible:text-white dark:focus-visible:bg-cyan-400 dark:text-cyan-400 dark:focus-visible:text-zinc-800 dark:hover:text-zinc-800 dark:border-cyan-400 h-11"
                       >
                         Central do Assinante
                       </a>

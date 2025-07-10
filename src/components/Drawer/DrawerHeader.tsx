@@ -20,10 +20,10 @@ export function DrawerHeader() {
   const [isOpenThree, setIsOpenThree] = useState(false);
   const [isOpenFour, setIsOpenFour] = useState(false);
 
-  const handleClose = () => setTimeout(() => setIsOpen(false), 300);
-  const handleCloseTwo = () => setTimeout(() => setIsOpenTwo(false), 300);
-  const handleCloseThree = () => setTimeout(() => setIsOpenThree(false), 300);
-  const handleCloseFour = () => setTimeout(() => setIsOpenFour(false), 300);
+  const handleClose = () => setIsOpen(false);
+  const handleCloseTwo = () => setIsOpenTwo(false);
+  const handleCloseThree = () => setIsOpenThree(false);
+  const handleCloseFour = () => setIsOpenFour(false);
 
   useEffect(() => {
     if (!isOpen) {
@@ -45,7 +45,7 @@ export function DrawerHeader() {
           <button
             aria-label="Abrir o menu"
             type="button"
-            className="w-7 h-7 flex items-center justify-center bg-blue-700 rounded-md border border-blue-700 text-white transition-colors hover:bg-transparent hover:text-blue-700 hover:border-blue-700 hover:border-2 duration-300 dark:hover:text-cyan-500 dark:hover:border-cyan-500 dark:bg-cyan-400 dark:text-zinc-900 dark:hover:bg-transparent dark:border-cyan-400 focus:outline-none focus-visible:bg-transparent focus-visible:border-blue-700 focus-visible:text-blue-700 focus-visible:border-2 dark:focus-visible:bg-transparent dark:focus-visible:border-cyan-500 dark:focus-visible:text-cyan-500"
+            className="w-7 h-7 flex items-center justify-center text-gray-600 hover:text-gray-500 focus:outline-none focus-visible:text-gray-500 dark:text-cyan-400 dark:hover:text-cyan-500 dark:focus-visible:text-cyan-500 transition-colors duration-200"
           >
             <Menu size={20} />
           </button>
@@ -89,6 +89,7 @@ export function DrawerHeader() {
                     setOpen: setIsOpenThree,
                     handleClose: handleCloseThree,
                   },
+
                   {
                     label: "Área do Cliente",
                     icon: <CircleUser size={16} className="md:size-5" />,
