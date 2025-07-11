@@ -10,7 +10,6 @@ export default function HeaderMobile() {
           xmlns="http://www.w3.org/2000/svg"
           width={160}
           height={31}
-          fill="none"
           viewBox="0 0 160 31"
           className="fill-blue-700 dark:fill-white"
         >
