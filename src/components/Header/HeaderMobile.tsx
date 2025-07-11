@@ -10,16 +10,16 @@ export default function HeaderMobile() {
         <Image
           src="/logoblue.svg"
           alt="Logo Net Evolution"
-          width={180}
-          height={35}
+          width={150}
+          height={29}
           priority
           className="dark:hidden block"
         />
         <Image
           src="/logowhite.svg"
           alt="Logo Net Evolution"
-          width={180}
-          height={35}
+          width={150}
+          height={29}
           priority
           className="hidden dark:block"
         />

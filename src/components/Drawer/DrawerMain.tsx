@@ -38,8 +38,8 @@ export function DrawerMain() {
                 <Image
                   src="/logowhite.svg"
                   alt="Logo Net Evolution"
-                  width={180}
-                  height={35}
+                  width={150}
+                  height={29}
                   priority
                 />
               </h2>

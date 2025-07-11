@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { EllipsisVertical, FileScan, Headset } from "lucide-react";
 import { TbAccessible } from "react-icons/tb";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
 import { ButtonThemeToggle } from "../ButtonThemeToggle/ButtonThemeToggle";
 
 import {
@@ -46,8 +46,7 @@ export function DrawerAcessibility() {
               <Headset aria-hidden size={16} className="md:size-5" />
               <span>Suporte 24H</span>
             </a>
-            <Separator className="my-6 h-[1px] w-full bg-gray-400" />
-
+            <Separator className="bg-zinc-200 dark:bg-zinc-500 my-7" />
             {/* Fatura */}
             <a
               aria-label="Ir para a segunda via da fatura"
@@ -59,10 +58,8 @@ export function DrawerAcessibility() {
               <FileScan aria-hidden size={16} className="md:size-5" />
               <span>2ª Via da Fatura</span>
             </a>
-            <Separator className="my-6 h-[1px] w-full bg-gray-400" />
-
+            <Separator className="bg-zinc-200 dark:bg-zinc-500 my-7" />
             {/* Acessibilidade */}
-
             <Link
               prefetch
               href="/Acessibility"
@@ -71,6 +68,7 @@ export function DrawerAcessibility() {
               <TbAccessible size={18} className="md:size-6" strokeWidth={1.8} />
               <span>Acessibilidade</span>
             </Link>
+            <Separator className="bg-zinc-200 dark:bg-zinc-500 my-7" />
           </main>
           <div className="flex-1"></div>
           <SheetFooter className="sticky bottom-0 flex h-20 items-center px-5 py-5 gap-5">

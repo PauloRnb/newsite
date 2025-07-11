@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ChevronRight, Globe } from "lucide-react";
 import { BiSolidCheckShield } from "react-icons/bi";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
 
 import {
   Sheet,
@@ -52,10 +52,7 @@ export function DrawerFiber() {
               <span>Segurança</span>
               <BiSolidCheckShield />
             </Link>
-            <Separator
-              orientation="vertical"
-              className="shrink-0 w-[1px] h-6 bg-zinc-400 dark:bg-white rounded-full"
-            />
+            <Separator className="bg-zinc-200 dark:bg-zinc-500" />
             <Link
               prefetch
               href="/Indicate"

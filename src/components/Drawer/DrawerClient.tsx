@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { ChevronRight, CircleUser } from "lucide-react";
 import { BiSolidCheckShield } from "react-icons/bi";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
 
 import {
   Sheet,
@@ -54,7 +54,7 @@ export function DrawerClient() {
             </Link>
             <Separator
               orientation="vertical"
-              className="shrink-0 w-[1px] h-6 bg-zinc-400 dark:bg-white rounded-full"
+              className="bg-zinc-200 dark:bg-zinc-500"
             />
             <Link
               prefetch
