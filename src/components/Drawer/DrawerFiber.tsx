@@ -61,7 +61,7 @@ export function DrawerFiber() {
               href="/Indicate"
               className="text-base text-zinc-700 font-medium dark:text-cyan-400"
             >
-              Indique e Ganhe
+              Indicação
             </Link>
           </SheetFooter>
         </SheetContent>
