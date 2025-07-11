@@ -1,14 +1,15 @@
 "use client";
 
 import { Separator } from "@radix-ui/react-separator";
-import ModalSubHeader from "../Modal/ModalSubHeader";
+
 import Link from "next/link";
 import { ButtonThemeToggle } from "../ButtonThemeToggle/ButtonThemeToggle";
+import { ModalCoverage } from "../Modal/ModalCoverage";
 
 export default function SubHeaderDesktop() {
   return (
     <div className="container flex items-center justify-between py-4 gap-5 px-6 32lg:px-0">
-      <ModalSubHeader />
+      <ModalCoverage />
       <ul className="flex items-center justify-end gap-5">
         <li>
           <a
