@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Airplay, ChevronRight } from "lucide-react";
 import { BiSolidCheckShield } from "react-icons/bi";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
 
 import {
   Sheet,

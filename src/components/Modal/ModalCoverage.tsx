@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 
 import { CirclePlus } from "lucide-react";
 
@@ -27,7 +28,24 @@ export function ModalCoverage() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle asChild>
-              <h2>LOGO</h2>
+              <h2 className="w-fit">
+                <Image
+                  src="/logoblue.svg"
+                  alt="Logo Net Evolution"
+                  width={170}
+                  height={33}
+                  priority
+                  className="dark:hidden block"
+                />
+                <Image
+                  src="/logowhite.svg"
+                  alt="Logo Net Evolution"
+                  width={170}
+                  height={33}
+                  priority
+                  className="hidden dark:block"
+                />
+              </h2>
             </DialogTitle>
           </DialogHeader>
           <main className="flex flex-col items-start justify-between">
