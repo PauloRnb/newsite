@@ -2,7 +2,6 @@
 
 import { DrawerAcessibility } from "../Drawer/DrawerAcessibility";
 import { ModalCoverage } from "../Modal/ModalCoverage";
-import ModalSubHeader from "../Modal/ModalSubHeader";
 
 export default function SubHeaderMobile() {
   return (
