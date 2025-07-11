@@ -1,7 +1,6 @@
 "use client";
 
 import { Separator } from "@radix-ui/react-separator";
-
 import Link from "next/link";
 import { ButtonThemeToggle } from "../ButtonThemeToggle/ButtonThemeToggle";
 import { ModalCoverage } from "../Modal/ModalCoverage";
