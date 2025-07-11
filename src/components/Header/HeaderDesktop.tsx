@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
 import { Separator } from "@radix-ui/react-separator";
 import { ShieldCheck, ChevronDown, Download } from "lucide-react";
@@ -11,7 +12,22 @@ export default function HeaderDesktop() {
     <div className="h-full container flex items-center justify-between gap-2 px-6 32lg:px-0">
       <div className="h-full flex items-center justify-start gap-9">
         <Link href="/" className="select-none">
-          LOGO
+          <Image
+            src="/logoblue.svg"
+            alt="Logo Net Evolution"
+            width={180}
+            height={35}
+            priority
+            className="dark:hidden block"
+          />
+          <Image
+            src="/logowhite.svg"
+            alt="Logo Net Evolution"
+            width={180}
+            height={35}
+            priority
+            className="hidden dark:block"
+          />
         </Link>
         {/* Menu DropDown Left */}
         <NavigationMenu.Root className="relative z-10 flex items-center justify-center">
