@@ -2,33 +2,49 @@
 import Link from "next/link";
 import Image from "next/image";
 import * as NavigationMenu from "@radix-ui/react-navigation-menu";
-import { Separator } from "@radix-ui/react-separator";
+import { Separator } from "@/components/ui/separator";
+
 import { ShieldCheck, ChevronDown, Download } from "lucide-react";
 import { IoLogoAppleAppstore } from "react-icons/io5";
 import { RiGooglePlayFill } from "react-icons/ri";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 export default function HeaderDesktop() {
   return (
     <div className="h-full container flex items-center justify-between gap-2 px-6 32lg:px-0">
       <div className="h-full flex items-center justify-start gap-9">
-        <Link href="/" className="select-none">
-          <Image
-            src="/logoblue.svg"
-            alt="Logo Net Evolution"
-            width={180}
-            height={35}
-            priority
-            className="dark:hidden block"
-          />
-          <Image
-            src="/logowhite.svg"
-            alt="Logo Net Evolution"
-            width={180}
-            height={35}
-            priority
-            className="hidden dark:block"
-          />
-        </Link>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Link href="/" className="focus:outline-none select-none">
+              <Image
+                src="/logoblue.svg"
+                alt="Logo Net Evolution"
+                width={180}
+                height={35}
+                priority
+                className="dark:hidden block"
+              />
+              <Image
+                src="/logowhite.svg"
+                alt="Logo Net Evolution"
+                width={180}
+                height={35}
+                priority
+                className="hidden dark:block"
+              />
+            </Link>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p className="text-white font-semibold">
+              Logo da Empresa Net Evolution
+            </p>
+          </TooltipContent>
+        </Tooltip>
         {/* Menu DropDown Left */}
         <NavigationMenu.Root className="relative z-10 flex items-center justify-center">
           <NavigationMenu.List className="flex items-center gap-5 list-none">
@@ -135,6 +151,7 @@ export default function HeaderDesktop() {
                           orientation="horizontal"
                           className="shrink-0 w-10 h-[2px] bg-white rounded-full absolute z-[2]"
                         />
+
                         <Separator
                           orientation="horizontal"
                           className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
@@ -194,14 +211,8 @@ export default function HeaderDesktop() {
                         ACESSE NOSSA ÁREA DO CLIENTE:
                       </h2>
                       <div className="flex flex-col relative">
-                        <Separator
-                          orientation="horizontal"
-                          className="shrink-0 w-10 h-[2px] bg-blue-700 rounded-full absolute z-[2] dark:bg-white"
-                        />
-                        <Separator
-                          orientation="horizontal"
-                          className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
-                        />
+                        <Separator className="w-10 h-[2px] bg-blue-700 rounded-fulls dark:bg-white z-[2]" />
+                        <Separator className="h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400" />
                       </div>
                     </div>
                     <p className="w-[18rem] text-sm leading-4 text-zinc-400 dark:text-zinc-200">
@@ -270,16 +281,8 @@ export default function HeaderDesktop() {
                         INTERNET FIBRA
                       </h2>
                       <div className="flex flex-col relative">
-                        <Separator
-                          aria-hidden
-                          orientation="horizontal"
-                          className="shrink-0 w-10 h-[2px] bg-white rounded-full absolute z-[2]"
-                        />
-                        <Separator
-                          aria-hidden
-                          orientation="horizontal"
-                          className="shrink-0 w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400"
-                        />
+                        <Separator className="w-10 h-[2px] bg-white rounded-full absolute z-[2]" />
+                        <Separator className="w-full h-[1px] bg-zinc-300 z-[1] rounded-full absolute top-[1px] dark:bg-zinc-400" />
                       </div>
                     </div>
                     <div className="flex flex-col gap-2 w-fit">
