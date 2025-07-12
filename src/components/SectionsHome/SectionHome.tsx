@@ -1,12 +1,14 @@
 import Link from "next/link";
 
 import { CircleArrowRight } from "lucide-react";
+import { EmblaCarousel } from "./EmblaCarousel";
 
 export function SectionHome() {
   return (
     <section id="home-section" className="bg-white dark:bg-zinc-900">
       <div className="pb-24 md:py-24 flex flex-col container gap-16">
-        <div className="flex flex-col items-center justify-cente gap-5 px-5 xl:px-0 order-1">
+        <EmblaCarousel />
+        <div className="flex flex-col items-center justify-cente gap-5 px-5 xl:px-0">
           <h1
             className="text-2xl sm:text-4xl
              lg:text-5xl font-semibold text-blue-700 dark:text-zinc-100 text-center"
@@ -51,7 +53,6 @@ export function SectionHome() {
             </Link>
           </div>
         </div>
-        <div className="w-full xl:rounded-xl bg-zinc-500 h-[495px] flex"></div>
       </div>
     </section>
   );
